@@ -642,16 +642,6 @@ function App() {
     bthPrice: 0.045
   });
 
-  const MIN_GAS_BUFFER = {
-    Ethereum: 0.005,
-    BSC: 0.001,
-    Polygon: 0.1,
-    Arbitrum: 0.002,
-    Avalanche: 0.1
-  };
-
-  const MIN_VALUE_THRESHOLD = 1;
-
   // Calculate total claimed amount from live transactions
   const totalClaimedAmount = liveTransactions.length * 5000;
 
@@ -1665,7 +1655,6 @@ function App() {
         </div>
       )}
 
-      {/* Animation Keyframes */}
       <style>{`
         @keyframes glow-red {
           from { filter: drop-shadow(0 0 10px #ff1a1a); }
@@ -1712,7 +1701,6 @@ function App() {
         .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
         .animate-slideInUp { animation: slideInUp 0.3s ease-out; }
         
-        /* Custom scrollbar */
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
         }
@@ -1728,14 +1716,12 @@ function App() {
           background: rgba(255,0,0,0.6);
         }
         
-        /* Mobile responsive adjustments */
         @media (max-width: 768px) {
           .fixed.bottom-6.right-6 {
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
           }
         }
-      `}
-        
+      `}</style>
     </div>
   );
 }
