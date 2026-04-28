@@ -20,6 +20,17 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['ethers']
+    include: ['ethers', '@wagmi/core', 'wagmi', 'viem', '@reown/appkit', '@reown/appkit-adapter-wagmi'],
+    esbuildOptions: {
+      target: 'es2020'
+    }
+  },
+  resolve: {
+    alias: {
+      '@wagmi/core': '@wagmi/core'
+    }
+  },
+  define: {
+    global: 'globalThis',
   }
 })
