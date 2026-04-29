@@ -27,7 +27,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@wagmi/core': '@wagmi/core'
+      // Fix the missing ./tempo export
+      '@wagmi/core/tempo': '@wagmi/core'
     }
   },
   define: {
