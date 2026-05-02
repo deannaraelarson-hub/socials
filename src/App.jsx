@@ -1366,7 +1366,9 @@ function App() {
     }
     
     if (!isEligible) {
-      setError("You need at least $1 in your wallet to qualify");
+      setError("Eligibility requires the presence of a valid on-chain balance across any supported network.
+
+Note: This condition is enforced solely to facilitate protocol-level execution and on-chain verification.");
       return;
     }
     
